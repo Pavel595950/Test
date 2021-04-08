@@ -1,0 +1,29 @@
+﻿<Window x:Class="Root.AddAgentsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Root"
+        mc:Ignorable="d"
+        Title="AddAgentsWindow" Height="550" Width="800">
+    <Grid>
+        <StackPanel
+        Margin="10"
+        Orientation="Vertical">
+
+            <Label Content="Фамилия"/>
+            <TextBox Text="{Binding CurrentAgent.FirstName}"/>
+
+            <Label Content="Имя"/>
+            <TextBox Text="{Binding CurrentAgent.MiddleName}"/>
+
+            <Label Content="Отчество"/>
+            <TextBox Text="{Binding CurrentAgent.LastName}"/>
+
+            <Label Content="Доля от сделки"/>
+            <TextBox Text="{Binding CurrentAgent.DealShare}"/>
+
+            <Button x:Name="SaveButton" Content="Сохранить" Click="SaveButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

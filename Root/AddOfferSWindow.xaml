@@ -1,0 +1,41 @@
+﻿<Window x:Class="Root.AddOfferSWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Root"
+        mc:Ignorable="d"
+        Title="AddOfferSWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel
+        Margin="10"
+        Orientation="Vertical">
+
+            
+            <ComboBox
+            ItemsSource="{Binding StreetsList}"
+            SelectedItem="{Binding CurrentOffer.Streets}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Content="Клиент"/>
+            <TextBox Text="{Binding CurrentOffer.Clients}"/>
+
+            <Label Content="Агент"/>
+            <TextBox Text="{Binding CurrentOffer.Agents}"/>
+
+            <Label Content="Апартаменты"/>
+            <TextBox Text="{Binding CurrentOffer.Aparments}"/>
+
+            <Label Content="Цена"/>
+            <TextBox Text="{Binding CurrentOffer.Price}"/>
+
+            
+            <Button Content="Сохранить" Click="SaveButton_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

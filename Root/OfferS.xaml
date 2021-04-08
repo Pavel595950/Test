@@ -1,0 +1,75 @@
+﻿<Window x:Class="Root.OfferS"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Root"
+        mc:Ignorable="d"
+        Title="OfferS" Height="450" Width="800">
+    <Grid>
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <!-- grid поддерживает автоматическую высоту (и ширину) ячейки - по содержимому -->
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- WrapPanel переносит вложенные элементы на следующую строку (колонку)  -->
+            <WrapPanel
+            ItemHeight="40px">
+                <Button Content="Добавить" Click="AddButton_Click"/>
+            </WrapPanel>
+            <DataGrid Grid.Row="1"/>
+            <DataGrid
+    x:Name="OfferSDataGrid"
+    Grid.Row="1"
+    CanUserAddRows="false"
+    AutoGenerateColumns="False"
+    ItemsSource="{Binding OfferSList}">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+            Width="100"
+            Header="Клиенты"
+            Binding="{Binding ClientId}"/>
+                   
+                    <DataGridTextColumn
+            Width="100"
+            Header="Агенты"
+            Binding="{Binding AgentId}"/>
+                    <DataGridTextColumn
+            Width="100"
+            Header="Апартаменты"
+            Binding="{Binding ApartmentId}"/>
+                    <DataGridTextColumn
+            Width="100"
+            Header="Цена"
+            Binding="{Binding Price}"/>
+                    
+                    <DataGridTemplateColumn
+            Header="Действия">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel 
+                        Orientation="Horizontal">
+                                    <Button 
+                            Content="Редактировать" 
+                            Name="EditButton" 
+                            Click="EditButton_Click"/>
+                                    <Button 
+                            Content="Удалить" 
+                            Name="DeleteButton" 
+                            Click="DeleteButton_Click"/>
+
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>

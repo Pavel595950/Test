@@ -1,0 +1,62 @@
+﻿<Window x:Class="Root.AddApatmentsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Root"
+        mc:Ignorable="d"
+        Title="AddApatmentsWindow" Height="550" Width="800">
+    <Grid>
+        <StackPanel
+        Margin="10"
+        Orientation="Vertical">
+
+            <Label Content="Город"/>
+            
+            <ComboBox
+            ItemsSource="{Binding CitiesList}"
+            SelectedItem="{Binding CurrentApartment.Cities}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Content="Улица"/>
+            <ComboBox
+            ItemsSource="{Binding StreetsList}"
+            SelectedItem="{Binding CurrentApartment.Streets}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Content="Дом"/>
+            <TextBox Text="{Binding CurrentApartment.House}"/>
+
+            <Label Content="Номер"/>
+            <TextBox Text="{Binding CurrentApartment.Number}"/>
+
+            <Label Content="Широта"/>
+            <TextBox Text="{Binding CurrentApartment.Latitude}"/>
+
+            <Label Content="Долгота"/>
+            <TextBox Text="{Binding CurrentApartment.Longitude}"/>
+
+            <Label Content="Общая площадь"/>
+            <TextBox Text="{Binding CurrentApartment.TotalArea}"/>
+
+            <Label Content="Количество комнат"/>
+            <TextBox Text="{Binding CurrentApartment.Rooms}"/>
+
+            <Label Content="Этаж"/>
+            <TextBox Text="{Binding CurrentApartment.Floor}"/>
+
+            
+
+
+            <Button x:Name="SaveButton" Content="Сохранить" Click="SaveButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

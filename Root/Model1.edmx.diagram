@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="82c4761351494b58bcfb84cb7d57eb70" Name="Diagram1">
+        <EntityTypeShape EntityType="skulikovModel.Agents" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="skulikovModel.Apartments" Width="1.5" PointX="3.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="skulikovModel.Cities" Width="1.5" PointX="1.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="skulikovModel.Clients" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="skulikovModel.Needs" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="skulikovModel.Offers" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="skulikovModel.Streets" Width="1.5" PointX="1.5" PointY="10.375" IsExpanded="true" />
+        <AssociationConnector Association="skulikovModel.FK_Needs_Agents" ManuallyRouted="false" />
+        <AssociationConnector Association="skulikovModel.FK_Offers_Agents" ManuallyRouted="false" />
+        <AssociationConnector Association="skulikovModel.FK_Apartments_City" ManuallyRouted="false" />
+        <AssociationConnector Association="skulikovModel.FK_Apartments_Streets" ManuallyRouted="false" />
+        <AssociationConnector Association="skulikovModel.FK_Offers_Apartments" ManuallyRouted="false" />
+        <AssociationConnector Association="skulikovModel.FK_Needs_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="skulikovModel.FK_Offers_Clients" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
